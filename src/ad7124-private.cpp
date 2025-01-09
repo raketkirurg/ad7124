@@ -427,7 +427,7 @@ Ad7124Private::init (int slave_select, Ad7124Register * regs) {
   reg = regs;
 
   /* Initialize the SPI communication. */
-  ret = drv.init (slave_select, false, 1000000, 1, 0);
+  ret = drv.init (slave_select, false, 5000000, 1, 0); //Increased from 1000000. TUNEABLE
   if (ret == false) {
     return AD7124_SPI_ERR;
   }
