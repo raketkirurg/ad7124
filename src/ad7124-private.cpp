@@ -270,7 +270,7 @@ Ad7124Private::waitForSpiReady (uint32_t timeout) {
 
     if (timeout) {
 
-      drv.delay (1);
+      drv.delay (100); //This generally works. TUNEABLE
       timeout--;
     }
   }
@@ -309,7 +309,7 @@ Ad7124Private::waitToPowerOn (uint32_t timeout) {
                   AD7124_STATUS_REG_POR_FLAG) == 0;
     if (timeout) {
 
-      drv.delay (10);
+      drv.delay (10000);  //Direct conversion to micros. TUNEABLE
       timeout--;
     }
   }
@@ -349,7 +349,7 @@ Ad7124Private::waitForConvReady (uint32_t timeout) {
 
     if (timeout) {
 
-      drv.delay (1);
+      drv.delay (10); //Safe from my experience. TUNEABLE
       timeout--;
     }
   }

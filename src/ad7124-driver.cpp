@@ -106,7 +106,7 @@ Ad7124Driver::write (const uint8_t * data, uint8_t len) {
 int
 Ad7124Driver::delay (unsigned long ms) {
 
-  ::delay (ms);
+  ::delayMicroseconds (ms); //Better delay resolution control. Will propagate. Was delay().
   return 0;
 }
 
